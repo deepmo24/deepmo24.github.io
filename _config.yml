@@ -4,7 +4,7 @@
 
 # Site
 title: lymo's Blog
-subtitle:
+subtitle: Welcome, here is Langyuan Mo's technological blog
 description: To be or not to be, it's a question.
 author: Langyuan Mo
 language: en
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
