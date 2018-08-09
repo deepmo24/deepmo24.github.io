@@ -42,6 +42,11 @@
     </main>
 
     <footer id="footer" class="footer">
+      {#
+      <div style="text-align:center;" id="musicdiv">
+        {% block music %}{% endblock %}
+      </div>
+      #}
       <div class="footer-inner">
         {% include '_partials/footer.swig' %}
         {% include '_third-party/analytics/analytics-with-widget.swig' %}

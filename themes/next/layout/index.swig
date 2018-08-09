@@ -8,6 +8,7 @@
   {% if is_home() %}page-home{% endif -%}
 {% endblock %}
 
+
 {% block content %}
   <section id="posts" class="posts-expand">
     {% for post in page.posts %}
@@ -17,6 +18,18 @@
 
   {% include '_partials/pagination.swig' %}
 {% endblock %}
+
+{#
+{% block music %}
+    <audio loop autoplay controls="controls" style="width:200px;">
+        <source src="./audio/valder_fields.mp3" 
+        type="audio/mpeg" >
+        (您的浏览器不支持 audio 元素。)
+    </audio>
+{% endblock %}
+
+#}
+
 
 {% block sidebar %}
   {{ sidebar_template.render(false) }}
