@@ -42,4 +42,4 @@ tags:
     参考 http://www.goorockey.com/2015/11/01/use-n-to-manage-node/
 
 ## windows下安装
-暂略
+直接在[nodejs官网](https://nodejs.org/en/)下载安装即可使用。
