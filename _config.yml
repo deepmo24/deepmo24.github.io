@@ -5,7 +5,8 @@
 # Site
 title: LYMO's BLOG
 subtitle: 技术与生活兼得呀
-description: 永远不要停止思考。
+description: 莫朗元 朗元 molangyuan langyuanmo langyuan mo
+signature: 永远不要停止思考。
 author: Langyuan Mo
 language: en
 timezone:
@@ -14,7 +15,8 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://langyuanmo.com
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :title/ # Have conflict risk, so don't use the same title!
 permalink_defaults:
 
 # Directory
