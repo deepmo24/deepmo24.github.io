@@ -5,11 +5,19 @@
 # Site
 title: LYMO's BLOG
 subtitle: 技术与生活兼得呀
-description: 莫朗元 朗元 molangyuan langyuanmo langyuan mo
+description: 莫朗元, 朗元, molangyuan, langyuanmo, langyuan mo
 signature: 永远不要停止思考。
 author: Langyuan Mo
 language: en
 timezone:
+
+
+# sitemap
+sitemap: 
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
