@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/share32.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/share16.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言 这篇博客教教你如何利用hexo和github pages搭建自己的静态博客，效果如：http://langyuanmo.com  hexo简介 hexo是一个基于nodejs的博客框架，具体请看 http://hexo.io 简单来说hexo就是一个可以让你不用写一行代码就可以创建你的博客的框架，并且通过修改配置文件就可以对博客进行配置。">
+<meta name="keywords" content="Hexo,博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + Github一小时快速搭建博客教程">
+<meta property="og:url" content="https://langyuanmo.com/Hexo-Github一小时快速搭建博客教程/index.html">
+<meta property="og:site_name" content="LYMO&#39;s BLOG">
+<meta property="og:description" content="前言 这篇博客教教你如何利用hexo和github pages搭建自己的静态博客，效果如：http://langyuanmo.com  hexo简介 hexo是一个基于nodejs的博客框架，具体请看 http://hexo.io 简单来说hexo就是一个可以让你不用写一行代码就可以创建你的博客的框架，并且通过修改配置文件就可以对博客进行配置。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-22T11:17:40.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo + Github一小时快速搭建博客教程">
+<meta name="twitter:description" content="前言 这篇博客教教你如何利用hexo和github pages搭建自己的静态博客，效果如：http://langyuanmo.com  hexo简介 hexo是一个基于nodejs的博客框架，具体请看 http://hexo.io 简单来说hexo就是一个可以让你不用写一行代码就可以创建你的博客的框架，并且通过修改配置文件就可以对博客进行配置。">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://langyuanmo.com/Hexo-Github一小时快速搭建博客教程/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Hexo + Github一小时快速搭建博客教程 | LYMO's BLOG</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LYMO's BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">技术与生活兼得呀</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://langyuanmo.com/Hexo-Github一小时快速搭建博客教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Langyuan Mo">
+      <meta itemprop="description" content="莫朗元 朗元 molangyuan langyuanmo langyuan mo">
+      <meta itemprop="image" content="/images/favorite.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LYMO's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Hexo + Github一小时快速搭建博客教程
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-02 16:06:39" itemprop="dateCreated datePublished" datetime="2018-03-02T16:06:39+08:00">2018-03-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-22 19:17:40" itemprop="dateModified" datetime="2019-04-22T19:17:40+08:00">2019-04-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术杂谈/" itemprop="url" rel="index"><span itemprop="name">技术杂谈</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/Hexo-Github一小时快速搭建博客教程/" class="leancloud_visitors" data-flag-title="Hexo + Github一小时快速搭建博客教程">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Views: </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>这篇博客教教你如何利用hexo和github pages搭建自己的静态博客，效果如：<a href="http://langyuanmo.com">http://langyuanmo.com</a></p>
+<h2 id="hexo简介"><a class="markdownIt-Anchor" href="#hexo简介"></a> hexo简介</h2>
+<p>hexo是一个基于nodejs的博客框架，具体请看 <a href="http://hexo.io" target="_blank" rel="noopener">http://hexo.io</a></p>
+<p>简单来说hexo就是一个可以让你不用写一行代码就可以创建你的博客的框架，并且通过修改配置文件就可以对博客进行配置。</p>
+<a id="more"></a>
+<h2 id="github-pages简介"><a class="markdownIt-Anchor" href="#github-pages简介"></a> Github pages简介</h2>
+<p>详细介绍在这里https://pages.github.com/</p>
+<p>Github pages作用是当你的网站代码放在github仓库上，设置github pages之后，github便会给你提供一个username.github.io的地址直接访问你仓库上的网站（它是个静态网页，如果你不知道静态网站和动态网站的区别可以自行百度一下，可以理解为没有服务端可以交互，如登录注册等功能，只是一个可以浏览内容的网页，不过用来做博客已经足够了）。</p>
+<h2 id="安装hexo并创建第一个博客"><a class="markdownIt-Anchor" href="#安装hexo并创建第一个博客"></a> 安装hexo并创建第一个博客</h2>
+<ol>
+<li>安装nodejs. <a href="https://nodejs.org/" target="_blank" rel="noopener">https://nodejs.org/</a></li>
+<li>安装hexo<br>
+npm install hexo-cli -g</li>
+<li>运行以下命令<br>
+hexo init blog //创建一个名为blog的文件夹并初始化<br>
+cd blog 	   //进入该文件夹<br>
+npm install    //安装依赖包<br>
+hexo server    //本地运行hexo服务端，简短命令 hexo s也可以</li>
+<li>打开浏览器并输入地址 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，你就可以看到用hexo创建的默认博客界面了，这里hexo默认端口为4000，如果打不开可能是你的4000端口被占用，重新运行命令并指定端口4001<br>
+hexo sever -p 4001<br>
+到这一步你就可以在本地看到你的博客了</li>
+</ol>
+<h2 id="部署到github-pages上"><a class="markdownIt-Anchor" href="#部署到github-pages上"></a> 部署到github pages上</h2>
+<ol>
+<li>在Github上创建一个仓库，并且仓库名为[username].github.io （[username]指的是你的github用户名，仓库名不能叫别的）</li>
+<li>安装部署git的依赖包，在blog文件夹下，运行命令<br>
+npm install hexo-deployer-git --save</li>
+<li>打开blog文件夹下的_config.yml，找到deploy配置，设置部署到的github仓库地址，如：<br>
+deploy:<br>
+type: git //冒号后面有个空格，不加空格貌似识别不出来，是个坑，下面也一样冒号后要加空格<br>
+repo: <a href="https://github.com/jackie-bryant/jackie-bryant.github.io.git" target="_blank" rel="noopener">https://github.com/jackie-bryant/jackie-bryant.github.io.git</a> //这里更改为你的仓库地址<br>
+branch: [master]</li>
+<li>运行以下命令生成待部署的博客页面<br>
+hexo generate //或hexo g</li>
+<li>运行以下命令部署博客<br>
+hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布</li>
+<li>检查结果，此时你的生成的博客网页文件已经被上传到了github的[<a href="http://username.github.io" target="_blank" rel="noopener">username.github.io</a>]仓库下了</li>
+<li>用浏览器打开网址 [username].github.io，看是否能够成功打开</li>
+</ol>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
+<p>至此你已经可以简单地利用hexo创建自己的博客然后部署到github上，hexo的博客都是用markdown写的，每一次在本地写完博客后都需要在本地生成页面并且部署（上传）到github上，如何用hexo写博客请参考官方文档或者百度。</p>
+<p>如果你希望有自己的域名并且如何更好地使用hexo，请继续看以下教程。</p>
+<h2 id="将hexo文件上传到github仓库"><a class="markdownIt-Anchor" href="#将hexo文件上传到github仓库"></a> 将hexo文件上传到github仓库</h2>
+<p>细心的人会注意到，我们部署到github仓库上的文件跟本地的文件会不同，实际上我们只是把本地的.deploy_git文件里面的内容上传到github，而并没有上传如配置文件等hexo文件，为了方便起见我们可以将我们的hexo文件也上传到github上，否则我们可能换了个电脑就没有这些文件，那样没办法更新博客并且发布了。</p>
+<ol>
+<li>
+<p>在刚刚的blog文件夹下运行<br>
+git init //在当前文件夹下初始化git<br>
+git checkout -b hexo //创建hexo分支并切换到hexo分支<br>
+git remote add origin <a href="https://github.com/jackie-bryant/jackie-bryant.github.io.git" target="_blank" rel="noopener">https://github.com/jackie-bryant/jackie-bryant.github.io.git</a> //记得替换你的地址<br>
+git add .<br>
+git commit -m “update hexo”<br>
+git push origin hexo</p>
+</li>
+<li>
+<p>现在你在[username].github.io的仓库下会看到多了一个hexo分支，保存了我们的hexo文件</p>
+</li>
+<li>
+<p>为了避免以后误操作（忘记在本地切换到hexo分支），我们最好将hexo设置为默认分支，在仓库的Setting-&gt;Branchs-&gt;Default branch,选择hexo分支，然后update</p>
+</li>
+</ol>
+<h2 id="使用自己的域名"><a class="markdownIt-Anchor" href="#使用自己的域名"></a> 使用自己的域名</h2>
+<p>拥有自己的域名话，就可以直接用自己的域名访问而不是github.io这样的后缀的</p>
+<ol>
+<li>
+<p>首先你需要购买一个自己的域名，我自己的是在阿里云上购买的，com国际域名60元一年，不过阿里云需要实名认证</p>
+</li>
+<li>
+<p>设置域名解析，配置以下三项：<br>
+主机记录     记录类型           记录值<br>
+@              A             192.30.252.153<br>
+@              A             192.30.252.154<br>
+www          CNAME           <a href="http://username.github.io" target="_blank" rel="noopener">username.github.io</a>.<br>
+用你自己的 Github 用户名替换 username，注意io后面有个点</p>
+</li>
+<li>
+<p>在blog文件夹下的source文件夹里面，创建一个CNAME文件（没有后缀）</p>
+</li>
+<li>
+<p>打开CNAME，写入自己的顶级域名，<a href="http://xn--example-i22m.com" target="_blank" rel="noopener">如example.com</a>（没有www.），比如我的就是 <a href="http://langyuanmo.com">langyuanmo.com</a></p>
+</li>
+<li>
+<p>回到blog目录下，运行<br>
+hexo g -d //生成博客并部署</p>
+</li>
+<li>
+<p>然后你就会看到你的github仓库的master分支下（也就是部署的博客），根目录会多了一个CNAME文件，接着你用浏览器打开你的域名，应该就可以访问了</p>
+</li>
+</ol>
+<p>PS: 有些人可能会看到Setting的Github Pages部分有一个Custom domain,那个确实可以设置自己的域名，设置完之后它也会在你的master上创建一个CNAME文件，但是这样的做法每次我们部署博客的时候，新上传的博客文件会覆盖整个master分支，导致这个CNAME文件丢失，因此我们将CNAME文件放在source文件夹下，每次部署的时候都会重新上传一个CNAME文件</p>
+<h2 id="更换默认hexo主题"><a class="markdownIt-Anchor" href="#更换默认hexo主题"></a> 更换默认hexo主题</h2>
+<p>这里只是提一下，有兴趣可以自己找一些hexo主题</p>
+<p>如使用比较广泛的next主题http://theme-next.iissnan.com，当前我的博客使用的就是这个主题</p>
+<p>知乎【有哪些好看的 Hexo 主题】：<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">https://www.zhihu.com/question/24422335</a></p>
+<h2 id="安装各种hexo插件"><a class="markdownIt-Anchor" href="#安装各种hexo插件"></a> 安装各种hexo插件</h2>
+<p>这里也提一下，就不详细展开了，比较重用的有统计分析插件，sitemap，评论插件等等，另外如果嫌用原生的hexo写博客比较麻烦，推荐一个hexo admin插件。</p>
+<h2 id="安装插件跳坑指南"><a class="markdownIt-Anchor" href="#安装插件跳坑指南"></a> 安装插件跳坑指南</h2>
+<ul>
+<li>为NexT主题添加文章阅读量统计功能的<a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">教程</a></li>
+<li>使hexo博客支持latex公式的<a href="http://blog.cofess.com/2017/09/06/how-to-use-mathjax-to-render-latex-mathematical-formulas-in-hexo.html" target="_blank" rel="noopener">教程</a><br>
+<strong>(注：next主题集成了mathjax。在主题配置文件定位到mathjax，false改为true之后就不用做教程里“加载css”的步骤了。|测试：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>|)，有点小bug，把原来的字母也渲染出来了</strong></li>
+</ul>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>到此为止基本你能够学会用hexo和github搭建拥有自己域名的博客了，hexo还有其他一些玩法，以及如何配置它的配置文件，这些就需要读者自己去摸索了。</p>
+<blockquote>
+<p>博客取材于 <a href="http://jinjinlin.com/2017/08/26/Hexo-Github%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">http://jinjinlin.com/2017/08/26/Hexo-Github快速搭建博客教程/</a> 如有冒犯，请联系我将本文下架。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/免费下载网易云付费歌曲/" rel="prev" title="免费下载网易云付费歌曲">
+                免费下载网易云付费歌曲 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/favorite.png" alt="Langyuan Mo">
+            
+              <p class="site-author-name" itemprop="name">Langyuan Mo</p>
+              <div class="site-description motion-element" itemprop="description">永远不要停止思考。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/deepmo24" title="GitHub &rarr; https://github.com/deepmo24" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/langyuanmo" title="知乎 &rarr; https://www.zhihu.com/people/langyuanmo" rel="noopener" target="_blank"><i class="fa fa-fw fa-search"></i>知乎</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo简介"><span class="nav-number">2.</span> <span class="nav-text"> hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github-pages简介"><span class="nav-number">3.</span> <span class="nav-text"> Github pages简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo并创建第一个博客"><span class="nav-number">4.</span> <span class="nav-text"> 安装hexo并创建第一个博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到github-pages上"><span class="nav-number">5.</span> <span class="nav-text"> 部署到github pages上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text"> 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将hexo文件上传到github仓库"><span class="nav-number">7.</span> <span class="nav-text"> 将hexo文件上传到github仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用自己的域名"><span class="nav-number">8.</span> <span class="nav-text"> 使用自己的域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换默认hexo主题"><span class="nav-number">9.</span> <span class="nav-text"> 更换默认hexo主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装各种hexo插件"><span class="nav-number">10.</span> <span class="nav-text"> 安装各种hexo插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件跳坑指南"><span class="nav-number">11.</span> <span class="nav-text"> 安装插件跳坑指南</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">12.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Langyuan Mo</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'T7nMGOeSKBETkahWLcoXKcac-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'T7nMGOeSKBETkahWLcoXKcac-gzGzoHsz',
+                'X-LC-Key': 'eIohhLJKfKROCxT5vMome4L9',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

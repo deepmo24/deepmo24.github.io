@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/share32.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/share16.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册不断更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux命令手册">
+<meta property="og:url" content="https://langyuanmo.com/linux命令手册/index.html">
+<meta property="og:site_name" content="LYMO&#39;s BLOG">
+<meta property="og:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册不断更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-22T11:17:40.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux命令手册">
+<meta name="twitter:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册不断更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://langyuanmo.com/linux命令手册/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>linux命令手册 | LYMO's BLOG</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LYMO's BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">技术与生活兼得呀</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://langyuanmo.com/linux命令手册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Langyuan Mo">
+      <meta itemprop="description" content="莫朗元 朗元 molangyuan langyuanmo langyuan mo">
+      <meta itemprop="image" content="/images/favorite.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LYMO's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">linux命令手册
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-08 00:30:09" itemprop="dateCreated datePublished" datetime="2018-04-08T00:30:09+08:00">2018-04-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-22 19:17:40" itemprop="dateModified" datetime="2019-04-22T19:17:40+08:00">2019-04-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+            <span id="/linux命令手册/" class="leancloud_visitors" data-flag-title="linux命令手册">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Views: </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。</p>
+<p>—手册不断更新—</p>
+<h2 id="linux命令"><a class="markdownIt-Anchor" href="#linux命令"></a> linux命令</h2>
+<hr>
+<h3 id="df-h"><a class="markdownIt-Anchor" href="#df-h"></a> df -h</h3>
+<p>用途：查看磁盘使用情况。</p>
+<p>描述：</p>
+<a id="more"></a>
+<h3 id="du-h-文件目录"><a class="markdownIt-Anchor" href="#du-h-文件目录"></a> du -h [文件/目录]</h3>
+<p>用途：查看文件和目录磁盘使用的空间大小。</p>
+<p>描述：</p>
+<h3 id="ls-lgrep-wc-l"><a class="markdownIt-Anchor" href="#ls-lgrep-wc-l"></a> ls -l|grep “^-”|wc -l</h3>
+<p>用途：统计文件夹里的文件数。</p>
+<p>描述：grep &quot;^d&quot;则是统计子目录数。</p>
+<h3 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> [命令] &amp;</h3>
+<p>用途：让命令在后台执行。</p>
+<p>描述：命令的标准输出还是会显示在终端中，为了不显示命令的标准输出，一个方法是将标准输出重定向到一个文件中，如：command &gt;11.txt &amp;</p>
+<h3 id="jobs"><a class="markdownIt-Anchor" href="#jobs"></a> jobs</h3>
+<p>用途：查看后台进程。</p>
+<p>描述：</p>
+<h3 id="kill-s-9-pid"><a class="markdownIt-Anchor" href="#kill-s-9-pid"></a> kill -s 9 pid</h3>
+<p>用途：杀死进程。</p>
+<p>描述：9是一个signal, pid为进程id</p>
+<h3 id="screen"><a class="markdownIt-Anchor" href="#screen"></a> screen</h3>
+<p>PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远程连接服务器时，我们运行的进程会在我们断开这次连接后中断，有了screen，就可以使运行的进程保持运行。</p>
+<p>用途：会话恢复(只是功能之一)：只要Screen本身没有终止，在其内部运行的会话都可以恢复。</p>
+<p>描述：解决远程连接问题一般用到以下几个命令：</p>
+<ul>
+<li>创建会话：screen -S [session_name]</li>
+<li>会话列表：screen -ls</li>
+<li>分离会话：Ctrl+a+d (即将screen会话与我们本地运行的终端分离，这样子我们关闭了本地终端，screen会话仍然运行)</li>
+<li>恢复会话：screen -r [session_name] (重新连接本地终端后，恢复到会话中)</li>
+<li>结束会话：screen -S [session_name] -X quit</li>
+</ul>
+<h3 id="top"><a class="markdownIt-Anchor" href="#top"></a> top</h3>
+<p>用途：查看和监控linux的系统状况。</p>
+<p>描述：监控cpu、内存等的使用。</p>
+<h3 id="ps-aux"><a class="markdownIt-Anchor" href="#ps-aux"></a> ps -aux</h3>
+<p>用途：查看所有用户运行的所有进程情况。</p>
+<p>描述：用来查看pid以及进程的使用者等。显示的进程很多，<strong>结合grep命令使用选取匹配特定条件的行。</strong></p>
+<h3 id="nvidia-smi"><a class="markdownIt-Anchor" href="#nvidia-smi"></a> nvidia-smi</h3>
+<p>用途：查看GPU使用情况。</p>
+<p>描述：能显示哪个进程占用多少GPU资源。</p>
+<h3 id="gpu_monitor"><a class="markdownIt-Anchor" href="#gpu_monitor"></a> gpu_monitor</h3>
+<p>用途：查看gpu使用情况以及gpu使用者。</p>
+<p>描述：跟nvidia-smi相似但互补，可以查看谁在使用哪一个gpu。</p>
+<h3 id="scp"><a class="markdownIt-Anchor" href="#scp"></a> scp</h3>
+<p>用途：scp命令用于Linux之间复制文件和目录。</p>
+<p>描述：</p>
+<ul>
+<li>从本地传送到另一台服务器：scp local_file remote_username@remote_ip:remote_folder(文件夹加-r)</li>
+<li>从远程服务器到本地：scp remote_username@remote_ip:remote_file local_file(folder)(文件夹加-r)</li>
+</ul>
+<h3 id="ziptar"><a class="markdownIt-Anchor" href="#ziptar"></a> zip,tar</h3>
+<p>用途：压缩和打包命令。</p>
+<p>描述：</p>
+<ul>
+<li>压缩：zip target.zip source_file_or_folder</li>
+<li>解压缩：unzip target.zip</li>
+<li>打包并压缩：tar -czvf ***.tar.gz source_file_or_folder</li>
+<li>解压：tar -xzvf ***.tar.gz</li>
+</ul>
+<h3 id="watch-command"><a class="markdownIt-Anchor" href="#watch-command"></a> watch [command]</h3>
+<p>用途：以周期性的方式执行给定的指令，指令输出以全屏方式显示。</p>
+<p>描述：</p>
+<ul>
+<li>参数-n, 指定指令执行的间隔时间（秒）</li>
+<li>如监控gpu使用情况: watch -n 0 nvidia-smi</li>
+</ul>
+<h3 id="tmux"><a class="markdownIt-Anchor" href="#tmux"></a> tmux</h3>
+<p>用途： 终端分屏</p>
+<p>描述：</p>
+<ul>
+<li>上下分屏：ctrl + b  再按 &quot;</li>
+<li>左右分屏：ctrl + b  再按 %</li>
+<li>切换屏幕：ctrl + b  再按o</li>
+<li>关闭一个终端：ctrl + b  再按x</li>
+<li>上下分屏与左右分屏切换： ctrl + b  再按空格键</li>
+</ul>
+<h3 id="tee-filetxt"><a class="markdownIt-Anchor" href="#tee-filetxt"></a> tee file.txt</h3>
+<p>用途：同时把数据重定向到给定文件和屏幕上。</p>
+<p>描述：如用python跑实验，既能在屏幕输出，同时又把输出保存在文件中。</p>
+<h3 id="axel-n-10-url"><a class="markdownIt-Anchor" href="#axel-n-10-url"></a> axel -n 10 [url]</h3>
+<p>用途：Linux下一个不错的HTTP/ftp高速下载工具。</p>
+<p>描述：-n参数：线程数。这个命令比wget下载要快很多。</p>
+<h2 id="linux环境命令"><a class="markdownIt-Anchor" href="#linux环境命令"></a> linux环境命令</h2>
+<hr>
+<h3 id="anaconda解决linux下python2python3环境共存"><a class="markdownIt-Anchor" href="#anaconda解决linux下python2python3环境共存"></a> anaconda解决linux下python2，python3环境共存</h3>
+<p>用途:使用anaconda使得python2和python3共存。(忽略系统自带的python2)</p>
+<p>描述：</p>
+<ol>
+<li>下载anaconda(以python3.6为例)并安装(官网下载.sh文件)，此时该linux用户具备python3.6环境</li>
+<li>conda create --name py2 python=2.7 创建一个python2的虚拟环境</li>
+<li>source activate py2 激活python2环境，之后操作的python环境都是python2</li>
+<li>source deactivate py2 退出python2环境，之后操作的python环境是原来的python3</li>
+</ol>
+<h3 id="docker镜像独立的虚拟环境"><a class="markdownIt-Anchor" href="#docker镜像独立的虚拟环境"></a> docker镜像：独立的虚拟环境</h3>
+<p>用途：可以创建一个虚拟环境，在不想更新或不能更新服务器的环境时特别有用。</p>
+<p>描述：</p>
+<p>(以安装tensorflow-gpu-1.8.0镜像为例，需要cuda9依赖，但服务器只有cuda8，所以靠docker安装虚拟环境)</p>
+<ol>
+<li>安装docker环境(略，暂未安装过)</li>
+<li>docker pull image-name:tag 拉取第三方镜像，镜像在https://hub.docker.com/</li>
+<li>docker images 查看已安装的镜像列表</li>
+<li>docker（nvidia-docker）container run -it image-name:tag/image-id bash 运行镜像，（需要用到显卡就以nvidia-docker运行）</li>
+<li>docker contianer run -it -v  local-directory:contianer-directory image-name:tag/image-id bash， 加上-v参数将本地文件夹映射到创建的容器中</li>
+<li>exit或ctrl-D，退出镜像环境</li>
+</ol>
+<h3 id="查看cuda和cudnn的版本ubuntu"><a class="markdownIt-Anchor" href="#查看cuda和cudnn的版本ubuntu"></a> 查看Cuda和Cudnn的版本(ubuntu)</h3>
+<p>用途：安装深度学习框架时需要考虑Cuda和Cudnn的版本。</p>
+<p>描述：</p>
+<ol>
+<li>
+<p>查看cuda版本</p>
+<pre><code> cat /usr/local/cuda/version.txt
+</code></pre>
+</li>
+<li>
+<p>查看cudnn 版本</p>
+<pre><code> cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</code></pre>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/免费下载网易云付费歌曲/" rel="next" title="免费下载网易云付费歌曲">
+                <i class="fa fa-chevron-left"></i> 免费下载网易云付费歌曲
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/nodejs最新版安装/" rel="prev" title="nodejs最新版安装">
+                nodejs最新版安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/favorite.png" alt="Langyuan Mo">
+            
+              <p class="site-author-name" itemprop="name">Langyuan Mo</p>
+              <div class="site-description motion-element" itemprop="description">永远不要停止思考。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/deepmo24" title="GitHub &rarr; https://github.com/deepmo24" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/langyuanmo" title="知乎 &rarr; https://www.zhihu.com/people/langyuanmo" rel="noopener" target="_blank"><i class="fa fa-fw fa-search"></i>知乎</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">2.7.</span> <span class="nav-text"> screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ziptar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip,tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker镜像独立的虚拟环境"><span class="nav-number">3.2.</span> <span class="nav-text"> docker镜像：独立的虚拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.3.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Langyuan Mo</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'T7nMGOeSKBETkahWLcoXKcac-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'T7nMGOeSKBETkahWLcoXKcac-gzGzoHsz',
+                'X-LC-Key': 'eIohhLJKfKROCxT5vMome4L9',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
