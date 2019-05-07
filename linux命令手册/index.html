@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="LYMO&#39;s BLOG">
 <meta property="og:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册不断更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-23T08:24:49.987Z">
+<meta property="og:updated_time" content="2019-05-07T14:47:06.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令手册">
 <meta name="twitter:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册不断更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-23 16:24:49" itemprop="dateModified" datetime="2019-04-23T16:24:49+08:00">2019-04-23</time>
+                <time title="Modified: 2019-05-07 22:47:06" itemprop="dateModified" datetime="2019-05-07T22:47:06+08:00">2019-05-07</time>
               
             
           </span>
@@ -569,18 +569,6 @@
 <li>source activate py2 激活python2环境，之后操作的python环境都是python2</li>
 <li>source deactivate py2 退出python2环境，之后操作的python环境是原来的python3</li>
 </ol>
-<h3 id="docker镜像独立的虚拟环境"><a class="markdownIt-Anchor" href="#docker镜像独立的虚拟环境"></a> docker镜像：独立的虚拟环境</h3>
-<p>用途：可以创建一个虚拟环境，在不想更新或不能更新服务器的环境时特别有用。</p>
-<p>描述：</p>
-<p>(以安装tensorflow-gpu-1.8.0镜像为例，需要cuda9依赖，但服务器只有cuda8，所以靠docker安装虚拟环境)</p>
-<ol>
-<li>安装docker环境(略，暂未安装过)</li>
-<li>docker pull image-name:tag 拉取第三方镜像，镜像在https://hub.docker.com/</li>
-<li>docker images 查看已安装的镜像列表</li>
-<li>docker（nvidia-docker）container run -it image-name:tag/image-id bash 运行镜像，（需要用到显卡就以nvidia-docker运行）</li>
-<li>docker contianer run -it -v  local-directory:contianer-directory image-name:tag/image-id bash， 加上-v参数将本地文件夹映射到创建的容器中</li>
-<li>exit或ctrl-D，退出镜像环境</li>
-</ol>
 <h3 id="查看cuda和cudnn的版本ubuntu"><a class="markdownIt-Anchor" href="#查看cuda和cudnn的版本ubuntu"></a> 查看Cuda和Cudnn的版本(ubuntu)</h3>
 <p>用途：安装深度学习框架时需要考虑Cuda和Cudnn的版本。</p>
 <p>描述：</p>
@@ -714,7 +702,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -760,7 +748,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -824,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">2.7.</span> <span class="nav-text"> screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ziptar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip,tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lspci-grep-i-vga"><span class="nav-number">2.18.</span> <span class="nav-text"> lspci | grep -i vga</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker镜像独立的虚拟环境"><span class="nav-number">3.2.</span> <span class="nav-text"> docker镜像：独立的虚拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.3.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">2.7.</span> <span class="nav-text"> screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ziptar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip,tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lspci-grep-i-vga"><span class="nav-number">2.18.</span> <span class="nav-text"> lspci | grep -i vga</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.2.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li></ol></li></ol></div>
             
 
           </div>
