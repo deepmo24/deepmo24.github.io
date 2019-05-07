@@ -145,20 +145,6 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 4. source deactivate py2 退出python2环境，之后操作的python环境是原来的python3
 
 
-### docker镜像：独立的虚拟环境
-用途：可以创建一个虚拟环境，在不想更新或不能更新服务器的环境时特别有用。
-
-描述：
-
-(以安装tensorflow-gpu-1.8.0镜像为例，需要cuda9依赖，但服务器只有cuda8，所以靠docker安装虚拟环境)
-
-1. 安装docker环境(略，暂未安装过)
-2. docker pull image-name:tag 拉取第三方镜像，镜像在https://hub.docker.com/
-3. docker images 查看已安装的镜像列表
-4. docker（nvidia-docker）container run -it image-name:tag/image-id bash 运行镜像，（需要用到显卡就以nvidia-docker运行）
-5. docker contianer run -it -v  local-directory:contianer-directory image-name:tag/image-id bash， 加上-v参数将本地文件夹映射到创建的容器中
-6. exit或ctrl-D，退出镜像环境
-
 ### 查看Cuda和Cudnn的版本(ubuntu)
 用途：安装深度学习框架时需要考虑Cuda和Cudnn的版本。
 
