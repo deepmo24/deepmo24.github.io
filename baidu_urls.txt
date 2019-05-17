@@ -1,9 +1,1 @@
 https://langyuanmo.com/机器学习各研究方向的简要了解/
-https://langyuanmo.com/普通话拯救行动——I-Say-No/
-https://langyuanmo.com/linux服务器docker使用指南/
-https://langyuanmo.com/2019-Reading-Paper-List/
-https://langyuanmo.com/mysql安装与初始化/
-https://langyuanmo.com/nodejs最新版安装/
-https://langyuanmo.com/linux命令手册/
-https://langyuanmo.com/免费下载网易云付费歌曲/
-https://langyuanmo.com/Hexo-Github一小时快速搭建博客教程/
