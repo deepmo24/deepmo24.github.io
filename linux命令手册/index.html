@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="LYMO&#39;s BLOG">
 <meta property="og:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册持续更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-29T12:36:09.788Z">
+<meta property="og:updated_time" content="2019-10-07T14:11:45.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令手册">
 <meta name="twitter:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册持续更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-29 20:36:09" itemprop="dateModified" datetime="2019-05-29T20:36:09+08:00">2019-05-29</time>
+                <time title="Modified: 2019-10-07 22:11:45" itemprop="dateModified" datetime="2019-10-07T22:11:45+08:00">2019-10-07</time>
               
             
           </span>
@@ -493,7 +493,7 @@
 <h3 id="kill-s-9-pid"><a class="markdownIt-Anchor" href="#kill-s-9-pid"></a> kill -s 9 pid</h3>
 <p>用途：杀死进程。</p>
 <p>描述：9是一个signal, pid为进程id</p>
-<h3 id="screen"><a class="markdownIt-Anchor" href="#screen"></a> screen</h3>
+<h3 id="screen-tmux更好用"><a class="markdownIt-Anchor" href="#screen-tmux更好用"></a> screen (tmux更好用)</h3>
 <p>PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远程连接服务器时，我们运行的进程会在我们断开这次连接后中断，有了screen，就可以使运行的进程保持运行。</p>
 <p>用途：会话恢复(只是功能之一)：只要Screen本身没有终止，在其内部运行的会话都可以恢复。</p>
 <p>描述：解决远程连接问题一般用到以下几个命令：</p>
@@ -540,14 +540,36 @@
 <li>如监控gpu使用情况: watch -n 0 nvidia-smi</li>
 </ul>
 <h3 id="tmux"><a class="markdownIt-Anchor" href="#tmux"></a> tmux</h3>
-<p>用途： 终端分屏</p>
+<p>用途： 终端分屏；ssh远程连接断开仍可保持运行。</p>
 <p>描述：</p>
 <ul>
-<li>上下分屏：ctrl + b  再按 &quot;</li>
-<li>左右分屏：ctrl + b  再按 %</li>
-<li>切换屏幕：ctrl + b  再按o</li>
-<li>关闭一个终端：ctrl + b  再按x</li>
-<li>上下分屏与左右分屏切换： ctrl + b  再按空格键</li>
+<li>
+<p>查询会话：tmux ls</p>
+</li>
+<li>
+<p>创建会话：tmux new -s session-name</p>
+</li>
+<li>
+<p>断开会话：tmux detach或ctrl + b 再按d</p>
+</li>
+<li>
+<p>连接会话：tmux a -t session-name / tmux a快速连接第一个会话</p>
+</li>
+<li>
+<p>上下分屏：ctrl + b  再按 &quot;</p>
+</li>
+<li>
+<p>左右分屏：ctrl + b  再按 %</p>
+</li>
+<li>
+<p>切换屏幕：ctrl + b  再按&quot;上下左右&quot;箭头</p>
+</li>
+<li>
+<p>关闭一个终端：ctrl + b  再按x</p>
+</li>
+<li>
+<p>上下分屏与左右分屏切换： ctrl + b  再按空格键</p>
+</li>
 </ul>
 <h3 id="tee-filetxt"><a class="markdownIt-Anchor" href="#tee-filetxt"></a> tee file.txt</h3>
 <p>用途：同时把数据重定向到给定文件和屏幕上。</p>
@@ -556,12 +578,12 @@
 <p>用途：Linux下一个不错的HTTP/ftp高速下载工具。</p>
 <p>描述：-n参数：线程数。这个命令比wget下载要快很多。</p>
 <h3 id="lspci-grep-i-vga"><a class="markdownIt-Anchor" href="#lspci-grep-i-vga"></a> lspci | grep -i vga</h3>
-<p>用途: 列出显卡信息。</p>
-<p>描述： lspci是列出所有的pci设备, 然后通过grep -i vga挑选出显卡设备。</p>
+<p>用途：列出显卡信息。</p>
+<p>描述：lspci是列出所有的pci设备, 然后通过grep -i vga挑选出显卡设备。</p>
 <h2 id="linux环境命令"><a class="markdownIt-Anchor" href="#linux环境命令"></a> linux环境命令</h2>
 <hr>
 <h3 id="anaconda解决linux下python2python3环境共存"><a class="markdownIt-Anchor" href="#anaconda解决linux下python2python3环境共存"></a> anaconda解决linux下python2，python3环境共存</h3>
-<p>用途:使用anaconda使得python2和python3共存。(忽略系统自带的python2)</p>
+<p>用途：使用anaconda使得python2和python3共存。(忽略系统自带的python2)</p>
 <p>描述：</p>
 <ol>
 <li>下载anaconda(以python3.6为例)并安装(官网下载.sh文件)，此时该linux用户具备python3.6环境</li>
@@ -572,17 +594,25 @@
 <h3 id="查看cuda和cudnn的版本ubuntu"><a class="markdownIt-Anchor" href="#查看cuda和cudnn的版本ubuntu"></a> 查看Cuda和Cudnn的版本(ubuntu)</h3>
 <p>用途：安装深度学习框架时需要考虑Cuda和Cudnn的版本。</p>
 <p>描述：</p>
-<ol>
-<li>
-<p>查看cuda版本</p>
-<pre><code> cat /usr/local/cuda/version.txt
-</code></pre>
-</li>
-<li>
-<p>查看cudnn 版本</p>
-<pre><code> cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</code></pre>
-</li>
-</ol>
+<ul>
+<li>查看cuda版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/local/cuda/version.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看cudnn 版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
+<h3 id="定期更新anaconda里面的package版本"><a class="markdownIt-Anchor" href="#定期更新anaconda里面的package版本"></a> 定期更新Anaconda里面的package版本</h3>
+<p>用途：更新所有package。像深度学习框架pytorch等package更新速度很快，所以时不时需要升级。</p>
+<p>描述：</p>
+<ul>
+<li>更新所有package</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update --all</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更新pytorch</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update pytorch torchvision</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -842,7 +872,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">2.7.</span> <span class="nav-text"> screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ziptar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip,tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lspci-grep-i-vga"><span class="nav-number">2.18.</span> <span class="nav-text"> lspci | grep -i vga</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.2.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-tmux更好用"><span class="nav-number">2.7.</span> <span class="nav-text"> screen (tmux更好用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ziptar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip,tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lspci-grep-i-vga"><span class="nav-number">2.18.</span> <span class="nav-text"> lspci | grep -i vga</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.2.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定期更新anaconda里面的package版本"><span class="nav-number">3.3.</span> <span class="nav-text"> 定期更新Anaconda里面的package版本</span></a></li></ol></li></ol></div>
             
 
           </div>
