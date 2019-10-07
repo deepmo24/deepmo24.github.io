@@ -1,7 +1,7 @@
 ---
 title: linux命令手册
 date: 2018-04-08 00:30:09
-categories: 学习笔记
+categories: 使用指南
 tags: linux
 ---
 
@@ -43,7 +43,7 @@ tags: linux
 描述：9是一个signal, pid为进程id
 
 
-### screen
+### screen (tmux更好用)
 PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远程连接服务器时，我们运行的进程会在我们断开这次连接后中断，有了screen，就可以使运行的进程保持运行。
 
 用途：会话恢复(只是功能之一)：只要Screen本身没有终止，在其内部运行的会话都可以恢复。
@@ -104,12 +104,18 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 
 
 ### tmux
-用途： 终端分屏
+用途： 终端分屏；ssh远程连接断开仍可保持运行。
 
 描述：
+
+* 查询会话：tmux ls
+* 创建会话：tmux new -s session-name
+* 断开会话：tmux detach或ctrl + b 再按d
+* 连接会话：tmux a -t session-name / tmux a快速连接第一个会话
+
 * 上下分屏：ctrl + b  再按 "
 * 左右分屏：ctrl + b  再按 %
-* 切换屏幕：ctrl + b  再按o
+* 切换屏幕：ctrl + b  再按"上下左右"箭头
 * 关闭一个终端：ctrl + b  再按x
 * 上下分屏与左右分屏切换： ctrl + b  再按空格键
 
@@ -127,16 +133,16 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 
 
 ### lspci | grep -i vga
-用途: 列出显卡信息。
+用途：列出显卡信息。
 
-描述： lspci是列出所有的pci设备, 然后通过grep -i vga挑选出显卡设备。
+描述：lspci是列出所有的pci设备, 然后通过grep -i vga挑选出显卡设备。
 
 
 ## linux环境命令
 --------------------------------------------------------------------------------------------------------------------
 
 ### anaconda解决linux下python2，python3环境共存
-用途:使用anaconda使得python2和python3共存。(忽略系统自带的python2)
+用途：使用anaconda使得python2和python3共存。(忽略系统自带的python2)
 
 描述：
 1. 下载anaconda(以python3.6为例)并安装(官网下载.sh文件)，此时该linux用户具备python3.6环境
@@ -150,9 +156,35 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 
 描述：
 
-1. 查看cuda版本
+* 查看cuda版本
 
-        cat /usr/local/cuda/version.txt
-2. 查看cudnn 版本
+```
+cat /usr/local/cuda/version.txt
+```
 
-        cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+* 查看cudnn 版本
+
+```
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+```
+
+### 定期更新Anaconda里面的package版本
+
+用途：更新所有package。像深度学习框架pytorch等package更新速度很快，所以时不时需要升级。
+
+描述：
+
+* 更新所有package
+```
+conda update --all 
+```
+
+
+* 更新pytorch
+
+```
+conda update pytorch torchvision
+```
+
+  
+

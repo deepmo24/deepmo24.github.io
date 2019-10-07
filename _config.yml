@@ -6,7 +6,7 @@
 title: LYMO's BLOG
 subtitle: 技术与生活兼得呀
 description: 莫朗元, 朗元, molangyuan, langyuanmo, langyuan mo
-signature: 永远不要停止思考。
+signature: 纯粹做事，纯粹做人。
 author: Langyuan Mo
 language: en
 timezone:
@@ -17,6 +17,15 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+
+# hexo-baidu-url-submit
+# baidu会限制每天提交的数量，所以count数尽量小。令，如果频繁更新，考虑周期性地deploy新文章（即平时注释掉deploy到baidu-url-submit）
+baidu_url_submit:
+  count: 1
+  host: langyuanmo.com
+  token: http://data.zz.baidu.com/urls?site=langyuanmo.com&token=hGJtHnQAl8mQv7wv
+  path: baidu_urls.txt
 
 
 # URL
@@ -86,10 +95,16 @@ theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# deploy:
+#   type: git
+#   repo: https://github.com/deepmo24/deepmo24.github.io.git
+#   branch: [master]
 deploy:
-  type: git
+- type: git
   repo: https://github.com/deepmo24/deepmo24.github.io.git
   branch: [master]
+# - type: baidu_url_submitter
+
 
 
 #third-party lib, make hexo render Latex
