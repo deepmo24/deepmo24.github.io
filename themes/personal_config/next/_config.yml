@@ -199,11 +199,11 @@ site_state: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/deepmo24 || github
-  知乎: https://www.zhihu.com/people/langyuanmo || search
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  知乎: https://www.zhihu.com/people/langyuanmo || podcast
+  Twitter: https://twitter.com/molangyuan || twitter
+  E-Mail: mailto:langyuanmo@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
@@ -222,7 +222,8 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  #Title: http://example.com
+  # 王辉的博客: https://hui-wang.info/
+  # 字节跳动工程师: https://xmfbit.github.io/
 
 # Sidebar Avatar
 avatar:
