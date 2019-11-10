@@ -85,7 +85,7 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 * 从本地传送到另一台服务器：scp local_file remote_username@remote_ip:remote_folder(文件夹加-r)
 * 从远程服务器到本地：scp remote_username@remote_ip:remote_file local_file(folder)(文件夹加-r)
 
-### zip,tar
+### zip, tar, rar
 用途：压缩和打包命令。
 
 描述：
@@ -93,7 +93,7 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 * 解压缩：unzip target.zip
 * 打包并压缩：tar -czvf ***.tar.gz source_file_or_folder
 * 解压：tar -xzvf ***.tar.gz
-
+* 解压rar后缀文件: unrar x ***.rar /path/to/extract
 
 ### watch [command]
 用途：以周期性的方式执行给定的指令，指令输出以全屏方式显示。
@@ -136,6 +136,38 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 用途：列出显卡信息。
 
 描述：lspci是列出所有的pci设备, 然后通过grep -i vga挑选出显卡设备。
+
+
+### chmod
+用途：更改文件的权限。
+
+描述：chmod [-R] mode file
+
+* -R: 以递归的方式逐个变更
+* mode: \[ugoa\]表示user,group,other,all
+* mode: \[+-=\]表示增加、取消、等于
+* mode: \[rwx\]表示read,write,execute
+
+用法：
+* 将 文件 file1.txt 设定为只有该文件拥有者可以执行 :
+
+        chmod u+x file1.txt
+* 将文件 file1.txt 设为所有人皆可读取
+    
+        chmod ugo+r file1.txt
+* 将目前目录下的所有文件与子目录皆设为任何人可读取 :
+
+        chmod -R a+r *
+* chmod也可以用数字来表示权限：r=4，w=2，x=1
+
+      chmod a=rwx file 等价于 chmod 777 file 
+
+### ln [-s] [源文件] [目标文件]
+用途：为文件或目录建立硬链接或软链接(-s)。
+
+描述：
+* 软链接类似于Windows的快捷方式。(常用)
+* 硬链接指通过索引节点来进行连接，其作用是允许一个文件拥有多个有效路径名，这样用户就可以建立硬链接到重要文件，以防止“误删”的功能。
 
 
 ## linux环境命令
