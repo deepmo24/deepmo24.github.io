@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="LYMO&#39;s BLOG">
 <meta property="og:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册持续更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-04T11:10:36.417Z">
+<meta property="og:updated_time" content="2019-11-10T12:26:56.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令手册">
 <meta name="twitter:description" content="前言 鉴于经常性忘记一些linux命令，这篇博客就用来记录下自己查找过的有用的linux命令。 —手册持续更新—  linux命令   df -h 用途：查看磁盘使用情况。 描述：">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-11-04 19:10:36" itemprop="dateModified" datetime="2019-11-04T19:10:36+08:00">2019-11-04</time>
+                <time title="Modified: 2019-11-10 20:26:56" itemprop="dateModified" datetime="2019-11-10T20:26:56+08:00">2019-11-10</time>
               
             
           </span>
@@ -581,6 +581,45 @@
 <h3 id="lspci-grep-i-vga"><a class="markdownIt-Anchor" href="#lspci-grep-i-vga"></a> lspci | grep -i vga</h3>
 <p>用途：列出显卡信息。</p>
 <p>描述：lspci是列出所有的pci设备, 然后通过grep -i vga挑选出显卡设备。</p>
+<h3 id="chmod"><a class="markdownIt-Anchor" href="#chmod"></a> chmod</h3>
+<p>用途：更改文件的权限。</p>
+<p>描述：chmod [-R] mode file</p>
+<ul>
+<li>-R: 以递归的方式逐个变更</li>
+<li>mode: [ugoa]表示user,group,other,all</li>
+<li>mode: [±=]表示增加、取消、等于</li>
+<li>mode: [rwx]表示read,write,execute</li>
+</ul>
+<p>用法：</p>
+<ul>
+<li>
+<p>将 文件 file1.txt 设定为只有该文件拥有者可以执行 :</p>
+<pre><code>  chmod u+x file1.txt
+</code></pre>
+</li>
+<li>
+<p>将文件 file1.txt 设为所有人皆可读取</p>
+<pre><code>  chmod ugo+r file1.txt
+</code></pre>
+</li>
+<li>
+<p>将目前目录下的所有文件与子目录皆设为任何人可读取 :</p>
+<pre><code>  chmod -R a+r *
+</code></pre>
+</li>
+<li>
+<p>chmod也可以用数字来表示权限：r=4，w=2，x=1</p>
+<pre><code>chmod a=rwx file 等价于 chmod 777 file 
+</code></pre>
+</li>
+</ul>
+<h3 id="ln-s-源文件-目标文件"><a class="markdownIt-Anchor" href="#ln-s-源文件-目标文件"></a> ln [-s] [源文件] [目标文件]</h3>
+<p>用途：为文件或目录建立硬链接或软链接(-s)。</p>
+<p>描述：</p>
+<ul>
+<li>软链接类似于Windows的快捷方式。(常用)</li>
+<li>硬链接指通过索引节点来进行连接，其作用是允许一个文件拥有多个有效路径名，这样用户就可以建立硬链接到重要文件，以防止“误删”的功能。</li>
+</ul>
 <h2 id="linux环境命令"><a class="markdownIt-Anchor" href="#linux环境命令"></a> linux环境命令</h2>
 <hr>
 <h3 id="anaconda解决linux下python2python3环境共存"><a class="markdownIt-Anchor" href="#anaconda解决linux下python2python3环境共存"></a> anaconda解决linux下python2，python3环境共存</h3>
@@ -877,7 +916,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-tmux更好用"><span class="nav-number">2.7.</span> <span class="nav-text"> screen (tmux更好用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip-tar-rar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip, tar, rar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lspci-grep-i-vga"><span class="nav-number">2.18.</span> <span class="nav-text"> lspci | grep -i vga</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.2.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定期更新anaconda里面的package版本"><span class="nav-number">3.3.</span> <span class="nav-text"> 定期更新Anaconda里面的package版本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux命令"><span class="nav-number">2.</span> <span class="nav-text"> linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h"><span class="nav-number">2.1.</span> <span class="nav-text"> df -h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du-h-文件目录"><span class="nav-number">2.2.</span> <span class="nav-text"> du -h [文件/目录]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-lgrep-wc-l"><span class="nav-number">2.3.</span> <span class="nav-text"> ls -l|grep “^-”|wc -l</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">2.4.</span> <span class="nav-text"> [命令] &amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jobs"><span class="nav-number">2.5.</span> <span class="nav-text"> jobs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill-s-9-pid"><span class="nav-number">2.6.</span> <span class="nav-text"> kill -s 9 pid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen-tmux更好用"><span class="nav-number">2.7.</span> <span class="nav-text"> screen (tmux更好用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">2.8.</span> <span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-aux"><span class="nav-number">2.9.</span> <span class="nav-text"> ps -aux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nvidia-smi"><span class="nav-number">2.10.</span> <span class="nav-text"> nvidia-smi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gpu_monitor"><span class="nav-number">2.11.</span> <span class="nav-text"> gpu_monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp"><span class="nav-number">2.12.</span> <span class="nav-text"> scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip-tar-rar"><span class="nav-number">2.13.</span> <span class="nav-text"> zip, tar, rar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch-command"><span class="nav-number">2.14.</span> <span class="nav-text"> watch [command]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-number">2.15.</span> <span class="nav-text"> tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-filetxt"><span class="nav-number">2.16.</span> <span class="nav-text"> tee file.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axel-n-10-url"><span class="nav-number">2.17.</span> <span class="nav-text"> axel -n 10 [url]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lspci-grep-i-vga"><span class="nav-number">2.18.</span> <span class="nav-text"> lspci | grep -i vga</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod"><span class="nav-number">2.19.</span> <span class="nav-text"> chmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln-s-源文件-目标文件"><span class="nav-number">2.20.</span> <span class="nav-text"> ln [-s] [源文件] [目标文件]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux环境命令"><span class="nav-number">3.</span> <span class="nav-text"> linux环境命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#anaconda解决linux下python2python3环境共存"><span class="nav-number">3.1.</span> <span class="nav-text"> anaconda解决linux下python2，python3环境共存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看cuda和cudnn的版本ubuntu"><span class="nav-number">3.2.</span> <span class="nav-text"> 查看Cuda和Cudnn的版本(ubuntu)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定期更新anaconda里面的package版本"><span class="nav-number">3.3.</span> <span class="nav-text"> 定期更新Anaconda里面的package版本</span></a></li></ol></li></ol></div>
             
 
           </div>
