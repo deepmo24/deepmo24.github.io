@@ -30,7 +30,7 @@ baidu_url_submit:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://langyuanmo.com
+url: https://deepmo24.github.io
 root: /
 # permalink: :year/:month/:day/:title/
 permalink: :title/ # Have conflict risk, so don't use the same title!
