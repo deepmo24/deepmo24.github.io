@@ -23,7 +23,7 @@ baidusitemap:
 # baidu会限制每天提交的数量，所以count数尽量小。令，如果频繁更新，考虑周期性地deploy新文章（即平时注释掉deploy到baidu-url-submit）
 baidu_url_submit:
   count: 1
-  host: langyuanmo.com
+  host: https://deepmo24.github.io
   token: http://data.zz.baidu.com/urls?site=langyuanmo.com&token=hGJtHnQAl8mQv7wv
   path: baidu_urls.txt
 
@@ -101,8 +101,8 @@ theme: hexo-theme-next
 #   branch: [master]
 deploy:
 - type: git
-  repo: https://github.com/deepmo24/deepmo24.github.io.git
-  branch: [master]
+  repo: git@github.com:deepmo24/deepmo24.github.io.git
+  branch: master
 # - type: baidu_url_submitter
 
 
