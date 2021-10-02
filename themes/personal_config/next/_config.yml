@@ -230,7 +230,7 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: /images/cover.jpg
+  url: /images/kobe_bean_bryant-002.jpg
   # If true, the avatar would be dispalyed in circle.
   rounded: false
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -804,10 +804,10 @@ rating:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
-leancloud_visitors:
-  enable: true
-  app_id: T7nMGOeSKBETkahWLcoXKcac-gzGzoHsz
-  app_key: eIohhLJKfKROCxT5vMome4L9
+# leancloud_visitors:
+#   enable: true
+#   app_id: T7nMGOeSKBETkahWLcoXKcac-gzGzoHsz
+#   app_key: eIohhLJKfKROCxT5vMome4L9
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (security: false without hexo-leancloud-counter-security plugin), set `security` to `false`.
