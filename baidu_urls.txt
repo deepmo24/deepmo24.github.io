@@ -1,1 +1,1 @@
-https://deepmo24.github.io/机器学习各研究方向的简要了解/
+https://deepmo24.github.io/vscode配置remote-ssh连接服务器/

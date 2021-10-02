@@ -97,18 +97,18 @@
 
 
 
-  <meta name="description" content="docker镜像的拉取与管理; docker容器的创建与管理。">
-<meta name="keywords" content="linux,docker">
+  <meta name="description" content="vs code远程连接服务器  本地ssh配置  将自己的ssh公私钥放在用户ssh目录下,如C:\Users\deepmo.ssh vscode配置   安装remote ssh插件   左侧栏“远程资源管理器”点击配置，打开ssh config文件   输入远程服务器相关信息，如：   Host smil-gpu016   HostName gpu016.scut-smil.cn   Use">
+<meta name="keywords" content="ssh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux服务器docker使用指南">
-<meta property="og:url" content="https://deepmo24.github.io/linux服务器docker使用指南/index.html">
+<meta property="og:title" content="vscode配置remote-ssh连接服务器">
+<meta property="og:url" content="https://deepmo24.github.io/vscode配置remote-ssh连接服务器/index.html">
 <meta property="og:site_name" content="LYMO&#39;s BLOG">
-<meta property="og:description" content="docker镜像的拉取与管理; docker容器的创建与管理。">
+<meta property="og:description" content="vs code远程连接服务器  本地ssh配置  将自己的ssh公私钥放在用户ssh目录下,如C:\Users\deepmo.ssh vscode配置   安装remote ssh插件   左侧栏“远程资源管理器”点击配置，打开ssh config文件   输入远程服务器相关信息，如：   Host smil-gpu016   HostName gpu016.scut-smil.cn   Use">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-29T12:36:28.272Z">
+<meta property="og:updated_time" content="2021-10-02T04:10:11.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux服务器docker使用指南">
-<meta name="twitter:description" content="docker镜像的拉取与管理; docker容器的创建与管理。">
+<meta name="twitter:title" content="vscode配置remote-ssh连接服务器">
+<meta name="twitter:description" content="vs code远程连接服务器  本地ssh配置  将自己的ssh公私钥放在用户ssh目录下,如C:\Users\deepmo.ssh vscode配置   安装remote ssh插件   左侧栏“远程资源管理器”点击配置，打开ssh config文件   输入远程服务器相关信息，如：   Host smil-gpu016   HostName gpu016.scut-smil.cn   Use">
 
 
 
@@ -116,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="https://deepmo24.github.io/linux服务器docker使用指南/">
+  <link rel="canonical" href="https://deepmo24.github.io/vscode配置remote-ssh连接服务器/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>linux服务器docker使用指南 | LYMO's BLOG</title>
+  <title>vscode配置remote-ssh连接服务器 | LYMO's BLOG</title>
   
 
 
@@ -346,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://deepmo24.github.io/linux服务器docker使用指南/">
+    <link itemprop="mainEntityOfPage" href="https://deepmo24.github.io/vscode配置remote-ssh连接服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Langyuan Mo">
@@ -363,7 +363,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">linux服务器docker使用指南
+          <h2 class="post-title" itemprop="name headline">vscode配置remote-ssh连接服务器
 
               
             
@@ -389,24 +389,12 @@
                 
               
 
-              <time title="Created: 2019-05-07 21:32:54" itemprop="dateCreated datePublished" datetime="2019-05-07T21:32:54+08:00">2019-05-07</time>
+              <time title="Created: 2021-10-02 12:08:56 / Modified: 12:10:11" itemprop="dateCreated datePublished" datetime="2021-10-02T12:08:56+08:00">2021-10-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-05-29 20:36:28" itemprop="dateModified" datetime="2019-05-29T20:36:28+08:00">2019-05-29</time>
               
             
           </span>
@@ -444,8 +432,6 @@
           
 
           
-            <div class="post-description">docker镜像的拉取与管理; docker容器的创建与管理。</div>
-          
 
         </div>
       </header>
@@ -460,124 +446,82 @@
       
 
       
-        <h2 id="docker介绍"><a class="markdownIt-Anchor" href="#docker介绍"></a> Docker介绍</h2>
-<p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后在linux服务器上发布、使用。</p>
-<p>通俗地说，docker就是一个帮你配好环境的的微型操作系统。例如我们需要使用某个应用，但是让这个应用运行需要配置很多环境，很麻烦。这个时候docker出来说它都帮你搞定了，你只要把这个docker镜像从远程仓库pull下来，然后创建容器，即可使用。岂不美哉？</p>
-<p>docker镜像：静态环境，就像是还没运行的代码。<br>
-docker容器：运行镜像得到的微型操作系统，就像代码运行的程序。</p>
-<h2 id="docker使用"><a class="markdownIt-Anchor" href="#docker使用"></a> Docker使用</h2>
-<h3 id="镜像拉取与管理"><a class="markdownIt-Anchor" href="#镜像拉取与管理"></a> 镜像拉取与管理</h3>
-<p>镜像在拉取下来后，即可使用。需要注意的是镜像里面的环境是固定不变的，在创建容器后如果改变了该镜像的一些环境，如新增加包或更新包等，并不会写入到镜像中。如果需要使用新环境，则需要将容器commit成一个新镜像。</p>
+        <h2 id="vs-code远程连接服务器"><a class="markdownIt-Anchor" href="#vs-code远程连接服务器"></a> vs code远程连接服务器</h2>
+<h3 id="本地ssh配置"><a class="markdownIt-Anchor" href="#本地ssh配置"></a> 本地ssh配置</h3>
+<ol>
+<li>将自己的ssh公私钥放在用户ssh目录下,如C:\Users\deepmo.ssh</li>
+<li>vscode配置
 <ul>
 <li>
-<p>拉取第三方镜像，镜像在https://hub.docker.com/</p>
-<pre><code>  docker pull repo/name:tag 
-</code></pre>
+<p>安装remote ssh插件</p>
 </li>
 <li>
-<p>查看已安装的镜像列表</p>
-<pre><code>  docker images 
-</code></pre>
+<p>左侧栏“远程资源管理器”点击配置，打开ssh config文件</p>
 </li>
 <li>
-<p>删除镜像</p>
-<pre><code>  docker rmi [image_id] 
+<p>输入远程服务器相关信息，如：</p>
+<pre><code>  Host smil-gpu016
+  HostName gpu016.scut-smil.cn
+  User molangyuan
+  # 不写公私钥地址是因为vscode默认会寻找用户ssh目录
 </code></pre>
 </li>
-<li>
-<p>更改镜像名称/tag</p>
-<pre><code>  (这个操作相当于新建了一个指针指向同一个镜像，固原来的指针还在)
-  docker tag [image_id] new_repo/new_name:new_tag 
-  docker rmi old_repo/old_nam:old_tag
-  (删除旧镜像指针)
-</code></pre>
-</li>
-<li>
-<p>运行镜像，创建容器</p>
-<ol>
-<li>
-<p>正常创建并进入(需要用显卡则用nvidia-docker)</p>
-<pre><code> docker (nvidia-docker) run -it image-name:tag/image-id bash
-</code></pre>
-</li>
-<li>
-<p>使用root权限创建并进入</p>
-<pre><code> /usr/bin/docker run (--runtime=nvidia) -it image-name:tag/image-id bash
-</code></pre>
-</li>
-<li>
-<p>挂载本地目录到docker容器：加-v参数</p>
-<pre><code> -v /local_path:/remote_path 
-</code></pre>
-</li>
-<li>
-<p>给容器起名字：加–name参数</p>
-<pre><code> --name jack-pytorch
-</code></pre>
-</li>
-<li>
-<p>与服务器共享全部内存：加–ipc=host （场景：pytorch num_workers&gt;0必须加这个参数创建容器）</p>
-<pre><code> --ipc=host
-</code></pre>
-</li>
-<li>
-<p><strong>结合起来一般如下使用</strong></p>
-<pre><code> nvidia-docker run -it -v /local_path:/remote_path --name jack-pytorch --ipc=host image-name:tag/image-id bash
-</code></pre>
+</ul>
 </li>
 </ol>
-</li>
-</ul>
-<h3 id="容器管理"><a class="markdownIt-Anchor" href="#容器管理"></a> 容器管理</h3>
-<p>容器在创建后会一直存在，退出容器不会删除，除非手动删除。</p>
-<ul>
+<h3 id="远程服务器ssh配置"><a class="markdownIt-Anchor" href="#远程服务器ssh配置"></a> 远程服务器ssh配置</h3>
+<h4 id="对于使用了freeipa统一认证的实验室服务器"><a class="markdownIt-Anchor" href="#对于使用了freeipa统一认证的实验室服务器"></a> 对于使用了FreeIPA统一认证的实验室服务器</h4>
+<ol>
 <li>
-<p>退出容器</p>
-<pre><code>  键入exit或者ctrl-D
+<p>先运行一条命令使所有服务器添加同一个ssh公钥</p>
+<pre><code> ipa user-mod &lt;你的用户名&gt; --sshpubkey=&quot;ssh-rsa 12345abcde= bob@DESCTOP-XXXXXX&quot;
 </code></pre>
 </li>
 <li>
-<p>启动容器</p>
-<pre><code>  docker container start [container_id]
+<p>在根目录的.ssh文件夹放置公钥文件（不清楚是否必要）</p>
+</li>
+<li>
+<p>将公钥写入authorized_keys文件（没有则手动创建）</p>
+<pre><code> cat id-rsa.pub &gt;&gt; authorized_keys
 </code></pre>
 </li>
 <li>
-<p>进入容器</p>
-<pre><code>  docker attach [container_id]
+<p>按道理此时从vscode点击服务器就能连接成功！</p>
+</li>
+</ol>
+<h4 id="对于普通实验室服务器"><a class="markdownIt-Anchor" href="#对于普通实验室服务器"></a> 对于普通实验室服务器</h4>
+<ol>
+<li>
+<p>在根目录的.ssh文件夹放置公钥文件</p>
+</li>
+<li>
+<p>将公钥写入authorized_keys文件（没有则手动创建）</p>
+<pre><code> cat id-rsa.pub &gt;&gt; authorized_keys
 </code></pre>
 </li>
 <li>
-<p>删除容器</p>
-<pre><code>  docker container rm [container_id]
-</code></pre>
+<p>按道理此时从vscode点击服务器就能连接成功！</p>
 </li>
+</ol>
+<h2 id="freeipa修改服务器根目录"><a class="markdownIt-Anchor" href="#freeipa修改服务器根目录"></a> FreeIPA修改服务器根目录</h2>
+<h3 id="修改命令"><a class="markdownIt-Anchor" href="#修改命令"></a> 修改命令</h3>
+<pre><code>ipa user-mod &lt;你的用户名&gt; --homedir /mnt/cephfs/home/&lt;你的用户名&gt;
+</code></pre>
+<p>ps: 修改之后还需要同步更改其他个人配置</p>
+<h3 id="个人配置修改-只需要用一台服务器的信息修改一次便可"><a class="markdownIt-Anchor" href="#个人配置修改-只需要用一台服务器的信息修改一次便可"></a> 个人配置修改 (只需要用一台服务器的信息修改一次便可)</h3>
+<ol>
 <li>
-<p>列出所有容器</p>
-<pre><code>  docker container ls -a
-</code></pre>
+<p>从原来根目录/home/xxx移动个人配置信息到新根目录~下,包括：</p>
+<pre><code> # bash相关配置文件
+ cp .profile ~
+ cp .bash* ~
+
+ # .cache文件夹，里面有torch模型等信息
+ cp -r .cache ~
+
+ # 还有其他等等相关文件</code></pre>
 </li>
-<li>
-<p><strong>将容器commit成镜像</strong></p>
-<pre><code>  docker commit [container_id] new_repo/new_name:new_tag
-  e.g. docker commit e21e8bfd7c99 deepmo/pytorch-cuda9.0:lastest
-</code></pre>
-</li>
-</ul>
-<h2 id="docker进阶"><a class="markdownIt-Anchor" href="#docker进阶"></a> Docker进阶</h2>
-<h3 id="服务器安装docker"><a class="markdownIt-Anchor" href="#服务器安装docker"></a> 服务器安装Docker</h3>
-<p>暂略</p>
-<h3 id="docker权限管理"><a class="markdownIt-Anchor" href="#docker权限管理"></a> docker权限管理</h3>
-<ul>
-<li>
-<p>将用户添加到docker组</p>
-<pre><code>  1. sudo groupadd docker (添加docker group,已有就跳过)
-  2. sudo gpasswd -a ${USER} docker (将当前用户添加到docker组)
-  3. 重新用ssh连接服务器即可
-</code></pre>
-</li>
-</ul>
-<h3 id="创建dockerfile"><a class="markdownIt-Anchor" href="#创建dockerfile"></a> 创建DockerFile</h3>
-<p>暂略</p>
+</ol>
 
       
     </div>
@@ -601,9 +545,7 @@ docker容器：运行镜像得到的微型操作系统，就像代码运行的�
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
+            <a href="/tags/ssh/" rel="tag"># ssh</a>
           
         </div>
       
@@ -616,8 +558,8 @@ docker容器：运行镜像得到的微型操作系统，就像代码运行的�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mysql安装与初始化/" rel="next" title="mysql安装与初始化">
-                <i class="fa fa-chevron-left"></i> mysql安装与初始化
+              <a href="/机器学习各研究方向的简要了解/" rel="next" title="机器学习(计算机视觉方面)各研究方向的简要了解">
+                <i class="fa fa-chevron-left"></i> 机器学习(计算机视觉方面)各研究方向的简要了解
               </a>
             
           </div>
@@ -625,10 +567,6 @@ docker容器：运行镜像得到的微型操作系统，就像代码运行的�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/机器学习各研究方向的简要了解/" rel="prev" title="机器学习(计算机视觉方面)各研究方向的简要了解">
-                机器学习(计算机视觉方面)各研究方向的简要了解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -845,7 +783,7 @@ docker容器：运行镜像得到的微型操作系统，就像代码运行的�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker介绍"><span class="nav-number">1.</span> <span class="nav-text"> Docker介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker使用"><span class="nav-number">2.</span> <span class="nav-text"> Docker使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像拉取与管理"><span class="nav-number">2.1.</span> <span class="nav-text"> 镜像拉取与管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器管理"><span class="nav-number">2.2.</span> <span class="nav-text"> 容器管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker进阶"><span class="nav-number">3.</span> <span class="nav-text"> Docker进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器安装docker"><span class="nav-number">3.1.</span> <span class="nav-text"> 服务器安装Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker权限管理"><span class="nav-number">3.2.</span> <span class="nav-text"> docker权限管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建dockerfile"><span class="nav-number">3.3.</span> <span class="nav-text"> 创建DockerFile</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vs-code远程连接服务器"><span class="nav-number">1.</span> <span class="nav-text"> vs code远程连接服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地ssh配置"><span class="nav-number">1.1.</span> <span class="nav-text"> 本地ssh配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程服务器ssh配置"><span class="nav-number">1.2.</span> <span class="nav-text"> 远程服务器ssh配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对于使用了freeipa统一认证的实验室服务器"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 对于使用了FreeIPA统一认证的实验室服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对于普通实验室服务器"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 对于普通实验室服务器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#freeipa修改服务器根目录"><span class="nav-number">2.</span> <span class="nav-text"> FreeIPA修改服务器根目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改命令"><span class="nav-number">2.1.</span> <span class="nav-text"> 修改命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人配置修改-只需要用一台服务器的信息修改一次便可"><span class="nav-number">2.2.</span> <span class="nav-text"> 个人配置修改 (只需要用一台服务器的信息修改一次便可)</span></a></li></ol></li></ol></div>
             
 
           </div>
