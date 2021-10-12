@@ -44,6 +44,15 @@ description:
 3. 按道理此时从vscode点击服务器就能连接成功！
 
 
+### 在vscode使用远程服务器python环境
+要使用服务器python环境，必须为该服务器安装python插件 （与本地python环境不同）
+
+1. 打开左侧“拓展”
+2. 搜索“python”
+3. 为服务器安装该插件
+4. 完成！后面在vscode最下面的状态栏选择远程python环境即可
+
+
 ## FreeIPA修改服务器根目录
 
 ### 修改命令
