@@ -1,1 +1,1 @@
-https://deepmo24.github.io/vscode配置remote-ssh连接服务器/
+https://deepmo24.github.io/深度学习框架安装指南/

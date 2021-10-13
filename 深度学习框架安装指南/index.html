@@ -97,16 +97,20 @@
 
 
 
-  <meta name="description" content="莫朗元, 朗元, molangyuan, langyuanmo, langyuan mo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LYMO&#39;s BLOG">
-<meta property="og:url" content="https://deepmo24.github.io/archives/2021/index.html">
+  <meta name="description" content="前言 tensorflow和pytorch这些深度学习框架的安装需要与一定版本的cuda、cudnn、gcc保持一致，所以安装时需要注意检查并安装正确版本的相关库，才能正常使用。  不同依赖库的版本对应关系一览   tensorflow与cuda版本对应关系   https://tensorflow.google.cn/install/source_windows?hl=en#gpu    py">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习框架安装指南">
+<meta property="og:url" content="https://deepmo24.github.io/深度学习框架安装指南/index.html">
 <meta property="og:site_name" content="LYMO&#39;s BLOG">
-<meta property="og:description" content="莫朗元, 朗元, molangyuan, langyuanmo, langyuan mo">
+<meta property="og:description" content="前言 tensorflow和pytorch这些深度学习框架的安装需要与一定版本的cuda、cudnn、gcc保持一致，所以安装时需要注意检查并安装正确版本的相关库，才能正常使用。  不同依赖库的版本对应关系一览   tensorflow与cuda版本对应关系   https://tensorflow.google.cn/install/source_windows?hl=en#gpu    py">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://deepmo24.github.io/images/CUDA_GCC.png">
+<meta property="og:updated_time" content="2021-10-13T07:22:28.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LYMO&#39;s BLOG">
-<meta name="twitter:description" content="莫朗元, 朗元, molangyuan, langyuanmo, langyuan mo">
+<meta name="twitter:title" content="深度学习框架安装指南">
+<meta name="twitter:description" content="前言 tensorflow和pytorch这些深度学习框架的安装需要与一定版本的cuda、cudnn、gcc保持一致，所以安装时需要注意检查并安装正确版本的相关库，才能正常使用。  不同依赖库的版本对应关系一览   tensorflow与cuda版本对应关系   https://tensorflow.google.cn/install/source_windows?hl=en#gpu    py">
+<meta name="twitter:image" content="https://deepmo24.github.io/images/CUDA_GCC.png">
 
 
 
@@ -114,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="https://deepmo24.github.io/archives/2021/">
+  <link rel="canonical" href="https://deepmo24.github.io/深度学习框架安装指南/">
 
 
 
@@ -124,7 +128,7 @@
   };
 </script>
 
-  <title>Archive | LYMO's BLOG</title>
+  <title>深度学习框架安装指南 | LYMO's BLOG</title>
   
 
 
@@ -172,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,7 +269,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -324,139 +328,285 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 8 posts in total. Keep on posting.
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2021">2021</h2>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://deepmo24.github.io/深度学习框架安装指南/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Langyuan Mo">
+      <meta itemprop="description" content="莫朗元, 朗元, molangyuan, langyuanmo, langyuan mo">
+      <meta itemprop="image" content="/images/kobe_bean_bryant-002.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LYMO's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/深度学习框架安装指南/" itemprop="url">
-            
-              <span itemprop="name">深度学习框架安装指南</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">深度学习框架安装指南
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-10-11T21:17:27+08:00" content="2021-10-11">
-          10-11
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-10-11 21:17:27" itemprop="dateCreated datePublished" datetime="2021-10-11T21:17:27+08:00">2021-10-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-10-13 15:22:28" itemprop="dateModified" datetime="2021-10-13T15:22:28+08:00">2021-10-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/使用指南/" itemprop="url" rel="index"><span itemprop="name">使用指南</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/vscode配置remote-ssh连接服务器/" itemprop="url">
-            
-              <span itemprop="name">vscode配置remote-ssh连接服务器</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-10-02T12:08:56+08:00" content="2021-10-02">
-          10-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>tensorflow和pytorch这些深度学习框架的安装需要与一定版本的cuda、cudnn、gcc保持一致，所以安装时需要注意检查并安装正确版本的相关库，才能正常使用。</p>
+<h2 id="不同依赖库的版本对应关系一览"><a class="markdownIt-Anchor" href="#不同依赖库的版本对应关系一览"></a> 不同依赖库的版本对应关系一览</h2>
+<ul>
+<li>
+<p>tensorflow与cuda版本对应关系</p>
+<pre><code>  https://tensorflow.google.cn/install/source_windows?hl=en#gpu
+</code></pre>
+</li>
+<li>
+<p>pytorch与cuda版本对应关系</p>
+<pre><code>  https://pytorch.org/get-started/previous-versions/
+</code></pre>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>
+<p>cuda与gcc版本对应关系</p>
+<ul>
+<li>
+<p>查最新版本cuda对应gcc</p>
+<pre><code>      https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+</code></pre>
+</li>
+<li>
+<p>查各版本cuda对应gcc</p>
+<pre><code>      https://docs.nvidia.com/cuda/archive/9.0/cuda-installation-guide-linux/index.html
+</code></pre>
+</li>
+<li>
+<p>cuda与gcc版本对应表</p>
+<p><img src="/images/CUDA_GCC.png" alt="loading"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="conda和pip安装深度学习框架"><a class="markdownIt-Anchor" href="#conda和pip安装深度学习框架"></a> conda和pip安装深度学习框架</h2>
+<ul>
+<li>
+<p>conda安装</p>
+<ul>
+<li>优点：conda安装过程会同时安装相应版本的cudatoolkit和cudnn，非常便捷就能使用</li>
+<li>缺点：由于cudatoolkit功能不全，一旦需要用到nvcc编译cuda相关文件就不行了</li>
+</ul>
+</li>
+<li>
+<p>pip安装</p>
+<ul>
+<li>优点：直接使用系统cuda，能使用完整的cuda功能，更健壮</li>
+</ul>
+</li>
+</ul>
+<h2 id="个人配置cuda和gcc环境变量"><a class="markdownIt-Anchor" href="#个人配置cuda和gcc环境变量"></a> 个人配置cuda和gcc环境变量</h2>
+<p><strong>PS:前提是相应版本已经安装到服务器上</strong></p>
+<h3 id="cuda"><a class="markdownIt-Anchor" href="#cuda"></a> cuda</h3>
+<p>编辑~/.bashrc文件，然后source一下即可</p>
+<pre><code># path of CUDA
+export CUDA_HOME=/mnt/cephfs/smil/cuda/cuda-10.0
+
+export PATH=/mnt/cephfs/smil/cuda/cuda-10.0/bin:$PATH
+export LD_LIBRARY_PATH=/mnt/cephfs/smil/cuda/cuda-10.0/lib64:$LD_LIBRARY_PATH
+</code></pre>
+<h3 id="gcc"><a class="markdownIt-Anchor" href="#gcc"></a> gcc</h3>
+<ol>
+<li>
+<p>个人设置一个gcc默认路径，如可以在<code>[home]/usr/bin</code></p>
+</li>
+<li>
+<p>创建一个新的gcc链接文件，让其链接到相应的gcc版本可执行文件</p>
+<pre><code> ln -s /usr/bin/gcc-7 [home]/usr/bin/gcc
+</code></pre>
+</li>
+<li>
+<p>修改环境变量，编辑~/.bashrc文件，然后source一下即可</p>
+<pre><code> export PATH=[home]/usr/bin:$PATH</code></pre>
+</li>
+</ol>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/vscode配置remote-ssh连接服务器/" rel="next" title="vscode配置remote-ssh连接服务器">
+                <i class="fa fa-chevron-left"></i> vscode配置remote-ssh连接服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -476,8 +626,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -630,6 +789,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同依赖库的版本对应关系一览"><span class="nav-number">2.</span> <span class="nav-text"> 不同依赖库的版本对应关系一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conda和pip安装深度学习框架"><span class="nav-number">3.</span> <span class="nav-text"> conda和pip安装深度学习框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人配置cuda和gcc环境变量"><span class="nav-number">4.</span> <span class="nav-text"> 个人配置cuda和gcc环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cuda"><span class="nav-number">4.1.</span> <span class="nav-text"> cuda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc"><span class="nav-number">4.2.</span> <span class="nav-text"> gcc</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -754,6 +930,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -769,6 +949,8 @@
 
   
 
+
+  
 
 
   
