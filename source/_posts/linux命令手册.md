@@ -118,6 +118,9 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 * 切换屏幕：ctrl + b  再按"上下左右"箭头
 * 关闭一个终端：ctrl + b  再按x
 * 交换窗口位置：ctrl + b + } 与下一个窗口交换位置
+* 创建新窗口：ctrl + b + c
+* 从窗口列表中切换窗口: ctrl + b + w
+* 从会话列表中切换会话: ctrl + b + s
 
 ### tee file.txt
 用途：同时把数据重定向到给定文件和屏幕上。
@@ -179,8 +182,9 @@ PS: 远程ssh连接服务器的福音。当我们从xshell(或其他软件)远�
 描述：
 1. 下载anaconda(以python3.6为例)并安装(官网下载.sh文件)，此时该linux用户具备python3.6环境
 2. conda create --name py2 python=2.7 创建一个python2的虚拟环境
-3. source activate py2 激活python2环境，之后操作的python环境都是python2
-4. source deactivate py2 退出python2环境，之后操作的python环境是原来的python3
+3. conda activate py2 激活python2环境，之后操作的python环境都是python2
+4. conda deactivate 退出python2环境，之后操作的python环境是原来的python3
+5. conda remove --name py2 --all 删除虚拟环境py2
 
 
 ### 查看Cuda和Cudnn的版本(ubuntu)
